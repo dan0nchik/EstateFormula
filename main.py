@@ -1,6 +1,12 @@
 import streamlit as st
 from formula import *
 
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 st.title('Расчет цены ипотеки')
 res = 0
 buy = st.number_input('Первоначальная цена квартиры (руб) (полностью, например, 8200000)', min_value=0, format='%i')
