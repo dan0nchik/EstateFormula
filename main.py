@@ -1,5 +1,6 @@
 import streamlit as st
 from formula import *
+import pyperclip
 
 hide_menu_style = """
         <style>
@@ -25,4 +26,9 @@ st.title('Результат:')
 if res == 0:
     st.text('Сначала введите все данные')
 else:
-    st.title('{:,}'.format(round(res, 2)).replace(',', ' ') + ' руб')
+    res = '{:,}'.format(round(res, 2)).replace(',', ' ') + ' руб'
+    st.title(res)
+    if st.button('Скопировать'):
+        pyperclip.copy(res)
+        st.success('Скопировано!')
+
