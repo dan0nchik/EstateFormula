@@ -15,13 +15,10 @@ tax = st.number_input('Подоходный налог при завышении
 form = st.selectbox('Первоначальный взнос (проценты/рубли)', options=['Проценты', 'Рубли'])
 if form == 'Проценты':
     fee = st.number_input('Первоначальный взнос (%)', min_value=0, value=20)
-    fee /= 100
     res = formula_with_percent(sell, buy, tax, fee)
 else:
     fee = st.number_input('Первоначальный взнос (полностью, в рублях)', min_value=0, value=0)
     res = formula_without_percent(sell, buy, tax, fee)
-
-tax /= 100
 
 
 st.title('Результат:')
