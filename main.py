@@ -19,6 +19,7 @@ if form == 'Нет':
     res = formula_without_entry_fee(sell, buy, tax, fee)
 
     st.subheader('Стоимость квартиры в ипотеку с завышением:')
+    st.subheader('Стоимость квартиры в ипотеку с занижением:')
     if res == 0:
         st.text('Сначала введите все данные')
     else:
@@ -34,7 +35,7 @@ if form == 'Да':
     if res == 0:
         st.text('Сначала введите все данные')
     else:
-        st.subheader('Стоимость квартиры в ипотеку с занижением:')
+        st.subheader('Стоимость квартиры в ипотеку с завышением:')
         st.subheader('{:,}'.format(res).replace(',', ' ') + ' руб')
         st.subheader('Первоначальный взнос: ')
         st.subheader('{:,}'.format(res * bank / 100).replace(',', ' ') + ' руб')
