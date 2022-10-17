@@ -47,3 +47,4 @@ tzlocal==4.2
 urllib3==1.26.12
 validators==0.20.0
 zipp==3.8.1
+streamlit-keyup==0.1.9

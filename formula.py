@@ -4,6 +4,8 @@ def formula_without_entry_fee(sell, buy, tax, fee):
     return (sell - buy * tax) / (1 - tax - fee)
 
 
-def formula_with_entry_fee(Arms, Ready, Initial):
-    # A - R = Final - (Final - I)*0.13
-    return (Arms - Ready - 0.13*Initial) / (1-0.13)
+def formula_with_entry_fee(arms, dkp_seller, initial):
+    # A - Ready = Final - (Final - I)*0.13
+    arms, dkp_seller, initial = int(arms), int(dkp_seller), int(initial)
+    ready = (arms - dkp_seller) * 0.13
+    return (arms - ready - 0.13 * initial) / (1 - 0.13)
